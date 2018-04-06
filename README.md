@@ -25,6 +25,7 @@ Higher nDCG score (close to 1.0 ) describes a search system that gives all the r
 ### What is the current nDCG score?
 `Final ncdg for all queries is 0.197136293042`
 
+
 ### What are the current classification metrics?
 
        label        precision    recall  f1-score   support
