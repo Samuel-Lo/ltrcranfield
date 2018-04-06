@@ -9,8 +9,7 @@ ideal_ndcg = {}
 '''
 DO NOT MODIFY THIS CLASS.
 '''
-
-from sklearn.externals import joblib
+from create_model import load_models
 def ideal_ndcg_queries():
     query_relevance = {}
     for relevance in read_relevance():
@@ -46,10 +45,7 @@ def calculate_dcg(query, documents):
     return sum
 
 
-def load_models():
-    vectorizer = joblib.load('resources/vectorizer.pkl')
-    clf = joblib.load('resources/classifier.pkl')
-    return [vectorizer, clf]
+
 
 if __name__ == '__main__':
     ideal_ndcg_queries()

@@ -3,7 +3,7 @@ from random import randint
 inverted_index = {}
 import pandas as pd
 
-from create_model import cosine_similarity
+from create_model import evaluate_model
 def remove_not_indexed_toknes(tokens):
     return [token for token in tokens if token in inverted_index]
 
@@ -37,19 +37,6 @@ def merge_postings(indexed_tokens):
     return first_list
 
 
-'''Please feel free to modify this function (evaluate_model)
-  Make sure the function only take three parameters: 1) Model (one or more model files), 2) Query, and 3) Document.
-  The function always should return one of the positions (classes) and the confidence. In my case confidence is always 0.5.
-  Preferably implement the function in a different file and call from here. Make sure keep everything else the same.
-'''
-
-def evaluate_model(model, query, document):
-
-    query_vec = model[0].transform([query['query']])
-    title_vec = model[0].transform([document['title']])
-    cos = cosine_similarity(query_vec, title_vec)
-    result = model[1].predict(cos)
-    return result[0],0.5
 
 
 def rank_documents(documents, query, model):

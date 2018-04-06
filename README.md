@@ -6,7 +6,7 @@ This is a very simple ranking implementation using classifier for the cranfield 
 
 ### What should be the goal for this project?
 
-Update the 1)  `create_model` file, 2) `evaluate_model` function in 'search.py' file and 3) `load_models` function in 'eval.py'  such that you can increase the nDCG score.
+Update the 1)  `create_model` file, 2) make sure you implement `evaluate_model` and`load_models` functions as required  such that you can increase the nDCG score.
 
 
 
@@ -38,3 +38,6 @@ Higher nDCG score (close to 1.0 ) describes a search system that gives all the r
     avg / total       0.29        0.31      0.30       607
 
 
+### What I should not do?
+
+Please do not modify `search.py` or `readers.py` or `eval.py` 

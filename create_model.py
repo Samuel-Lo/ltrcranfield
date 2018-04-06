@@ -9,6 +9,29 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.externals import joblib
 
+'''Please feel free to modify this function (load_models)
+   Make sure the function return the models required for the function below evaluate model
+'''
+
+def load_models():
+    vectorizer = joblib.load('resources/vectorizer.pkl')
+    clf = joblib.load('resources/classifier.pkl')
+    return [vectorizer, clf]
+
+'''Please feel free to modify this function (evaluate_model)
+  Make sure the function only take three parameters: 1) Model (one or more model files), 2) Query, and 3) Document.
+  The function always should return one of the positions (classes) and the confidence. In my case confidence is always 0.5.
+  Preferably implement the function in a different file and call from here. Make sure keep everything else the same.
+'''
+
+def evaluate_model(model, query, document):
+
+    query_vec = model[0].transform([query['query']])
+    title_vec = model[0].transform([document['title']])
+    cos = cosine_similarity(query_vec, title_vec)
+    result = model[1].predict(cos)
+    return result[0],0.5
+
 
 def cosine_similarity(x,y):
     cos = cosine(x.toarray()[0], y.toarray()[0])
