@@ -21,3 +21,19 @@ This makes the evaluation easier. [Click here more details](http://ir.dcs.gla.ac
 ### What is nDCG score?
 [nDCG](https://en.wikipedia.org/wiki/Discounted_cumulative_gain) is a very common metric used in search evaluations. 
 Higher nDCG score (close to 1.0 ) describes a search system that gives all the relevant results with most relevant ones on the top.
+
+### What is the current score?
+`Final ncdg for all queries is 0.197136293042`
+
+### What are the current classification metrics?
+
+             precision    recall  f1-score   support
+
+          1       0.24      0.17      0.20       122
+          2       0.25      0.23      0.24       120
+          3       0.39      0.50      0.44       246
+          4       0.17      0.13      0.15       119
+
+avg / total       0.29      0.31      0.30       607
+
+
